@@ -1,0 +1,12 @@
+{
+  "diabetes": {
+    "steps": ["Diagnosis", "Blood sugar test", "Insulin therapy", "Diet control", "Follow-up"],
+    "treatments": ["Insulin therapy", "Diet control", "Exercise"],
+    "tests": ["HbA1c", "Blood sugar"]
+  },
+  "fever": {
+    "steps": ["Check temperature", "Take medicine", "Rest", "Follow-up"],
+    "treatments": ["Paracetamol", "Rest"],
+    "tests": ["Temperature check"]
+  }
+}
