@@ -1,39 +1,64 @@
 from crewai import Task
-from agents import planner, researcher, validator, scheduler
+from agents import planner, researcher, scheduler
+from tools import detect_disease
+
 
 def create_tasks(user_input):
 
+    disease, data = detect_disease(user_input)
+
+    if disease:
+        description1 = f"""
+        The disease is: {disease}
+
+        Create a healthcare plan using these steps:
+        {data['steps']}
+
+        IMPORTANT:
+        - First line must be: Disease: {disease}
+        - Then write "Generated Plan"
+        - Keep answer short
+        - Use proper headings (Morning, Afternoon, Night)
+        """
+    else:
+        description1 = f"""
+        Analyze: {user_input}
+
+        IMPORTANT:
+        - Detect disease name from input
+        - First line must be: Disease: <name>
+        - Then write "Generated Plan"
+        - Keep answer short
+        """
+
     task1 = Task(
-        description=f"""
-        Analyze the goal: {user_input}
-        Break it into logical healthcare steps.
-        """,
+        description=description1,
         agent=planner,
-        expected_output="Step-by-step healthcare plan"
+        expected_output="Structured healthcare plan with disease name on top"
     )
 
     task2 = Task(
         description="""
-        Research best treatments, medicines, diet, and precautions.
+        Add treatments, medicines, and precautions.
+
+        Keep it short and relevant.
         """,
         agent=researcher,
-        expected_output="Detailed research-based recommendations"
+        expected_output="Short treatment info"
     )
 
     task3 = Task(
         description="""
-        Validate the plan and ensure correctness.
-        """,
-        agent=validator,
-        expected_output="Validated and corrected plan"
-    )
+        Create a daily routine:
 
-    task4 = Task(
-        description="""
-        Generate a detailed schedule with date and time.
+        Morning
+        Afternoon
+        Night
+
+        Keep it clean and readable.
         """,
         agent=scheduler,
-        expected_output="Daily healthcare schedule"
+        expected_output="Daily schedule"
     )
 
-    return [task1, task2, task3, task4]
+    return [task1, task2, task3]

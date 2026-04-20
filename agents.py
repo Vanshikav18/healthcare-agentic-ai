@@ -1,37 +1,36 @@
+import os
 from crewai import Agent
 
-# Planner
+llm = "groq/llama-3.1-8b-instant"
+
 planner = Agent(
     role="Healthcare Planner",
-    goal="Create a proper healthcare treatment plan",
-    backstory="Expert in healthcare planning",
+    goal="Create a proper healthcare treatment plan based on user input",
+    backstory="Expert in healthcare planning and patient treatment strategies",
     verbose=True,
-    llm="gpt-4o-mini"
+    llm=llm
 )
 
-# Researcher
 researcher = Agent(
     role="Medical Researcher",
-    goal="Research best treatments",
-    backstory="Expert in medical research",
+    goal="Research best treatments, medicines, diet, and precautions",
+    backstory="Highly skilled medical researcher with deep knowledge of diseases and treatments",
     verbose=True,
-    llm="gpt-4o-mini"
+    llm=llm
 )
 
-# Validator
 validator = Agent(
     role="Medical Validator",
-    goal="Validate treatment plan",
-    backstory="Ensures accuracy",
+    goal="Validate the healthcare plan and ensure correctness and safety",
+    backstory="Responsible for checking accuracy and eliminating incorrect medical advice",
     verbose=True,
-    llm="gpt-4o-mini"
+    llm=llm
 )
 
-# Scheduler
 scheduler = Agent(
     role="Healthcare Scheduler",
-    goal="Create schedule with date & time",
-    backstory="Expert in scheduling",
+    goal="Create a daily schedule with proper date and time for treatment",
+    backstory="Expert in planning structured routines for patient recovery",
     verbose=True,
-    llm="gpt-4o-mini"
+    llm=llm
 )

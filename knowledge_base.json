@@ -1,12 +1,77 @@
 {
-  "diabetes": {
-    "steps": ["Diagnosis", "Blood sugar test", "Insulin therapy", "Diet control", "Follow-up"],
-    "treatments": ["Insulin therapy", "Diet control", "Exercise"],
-    "tests": ["HbA1c", "Blood sugar"]
-  },
   "fever": {
-    "steps": ["Check temperature", "Take medicine", "Rest", "Follow-up"],
-    "treatments": ["Paracetamol", "Rest"],
+    "steps": ["Check temperature", "Identify cause", "Take rest"],
+    "treatments": ["Paracetamol", "Hydration", "Rest"],
     "tests": ["Temperature check"]
+  },
+  "asthma": {
+    "steps": ["Diagnosis", "Avoid triggers", "Use inhaler"],
+    "treatments": ["Inhaler", "Breathing exercises"],
+    "tests": ["Lung function test"]
+  },
+  "cancer": {
+    "steps": ["Diagnosis", "Staging", "Treatment planning"],
+    "treatments": ["Chemotherapy", "Radiation", "Surgery"],
+    "tests": ["Biopsy", "CT scan"]
+  },
+  "diabetes": {
+    "steps": ["Blood sugar test", "Diet control", "Medication"],
+    "treatments": ["Insulin", "Exercise", "Diet control"],
+    "tests": ["HbA1c"]
+  },
+  "influenza": {
+    "steps": ["Diagnosis", "Rest", "Medication"],
+    "treatments": ["Antiviral drugs", "Rest", "Fluids"],
+    "tests": ["Flu test"]
+  },
+  "malaria": {
+    "steps": ["Blood test", "Medication"],
+    "treatments": ["Antimalarial drugs"],
+    "tests": ["Blood smear"]
+  },
+  "tuberculosis": {
+    "steps": ["Diagnosis", "Medication"],
+    "treatments": ["Antibiotics"],
+    "tests": ["Chest X-ray", "Sputum test"]
+  },
+  "hypertension": {
+    "steps": ["Check BP", "Lifestyle change"],
+    "treatments": ["Medication", "Exercise", "Low salt diet"],
+    "tests": ["Blood pressure monitoring"]
+  },
+  "copd": {
+    "steps": ["Diagnosis", "Avoid smoking"],
+    "treatments": ["Inhalers", "Oxygen therapy"],
+    "tests": ["Spirometry"]
+  },
+  "covid": {
+    "steps": ["Testing", "Isolation"],
+    "treatments": ["Rest", "Fluids", "Medication"],
+    "tests": ["RT-PCR"]
+  },
+  "hiv": {
+    "steps": ["Testing", "Medication"],
+    "treatments": ["Antiretroviral therapy"],
+    "tests": ["HIV test"]
+  },
+  "alzheimer": {
+    "steps": ["Diagnosis", "Care planning"],
+    "treatments": ["Medication", "Therapy"],
+    "tests": ["Brain imaging"]
+  },
+  "arthritis": {
+    "steps": ["Diagnosis", "Lifestyle change"],
+    "treatments": ["Pain relievers", "Exercise"],
+    "tests": ["X-ray"]
+  },
+  "cholera": {
+    "steps": ["Rehydration", "Treatment"],
+    "treatments": ["ORS", "Antibiotics"],
+    "tests": ["Stool test"]
+  },
+  "hepatitis b": {
+    "steps": ["Diagnosis", "Monitoring"],
+    "treatments": ["Antiviral medication"],
+    "tests": ["Blood test"]
   }
 }
